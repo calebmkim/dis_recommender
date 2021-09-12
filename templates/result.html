@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Results</title>
+    <link rel="stylesheet" type= "text/css" href = "{{ url_for('static',filename='styles/style.css') }}">
+</head>
+<body class="body_style">
+
+	<header>
+		<div class="results_top">
+		<h1>Your Recommendations</h1>
+	    </div>
+	</header>
+	<div class = 'results-container'>
+        <div> 
+            1. <a href = {{urls[0]}}> {{titles[0]}} </a>
+        </div>
+        <div> 
+            2. <a href = {{urls[1]}}> {{titles[1]}} </a>
+        </div>
+        <div> 
+           3. <a href = {{urls[2]}}> {{titles[2]}} </a>
+        </div>
+        <div> 
+            4. <a href = {{urls[3]}}> {{titles[3]}} </a>
+        </div>
+        <div> 
+            5. <a href = {{urls[4]}}> {{titles[4]}} </a>
+        </div>
+	</div>
+</body>
+</html>

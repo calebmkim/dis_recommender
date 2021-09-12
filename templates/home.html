@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Page</title>
+	<link rel="stylesheet" type= "text/css" href = "{{ url_for('static',filename='styles/style.css') }}">
+</head>
+<body class = "body_style">
+	<header>
+		<div>
+		<h1 class = "home_item">Drowned in Sound (DiS) Forum Recommender</h1>
+		</div>
+	</header>
+
+	<div class="ml-container">
+		Put in the info on the post you are looking at, or thinking of making,
+		and get a recommendation for 5 other posts you should look at too!
+		<form action="{{ url_for('predict')}}" method="POST">
+
+		<p>Enter the category of your post here:</p>
+		<textarea class = 'text_area' name="post_category" rows="1" cols="50"></textarea>
+		
+		<p>Enter the title of your post here:</p>
+		<textarea class = 'text_area' name="post_title" rows="2" cols="50"></textarea>
+		
+		<p>Enter the body/content of your post here:</p>
+		<textarea class = 'text_area' name="post_body" rows="4" cols="50"></textarea>
+		
+		<br/><br/>
+
+		<input type="submit" class="btn-info" value="Get Recomendations">
+		
+	</form>
+		
+	</div>
+
+<div class = "about-title">
+	<br>
+	<br>
+About the App: <br>
+</div>	
+
+<div class = "about-body">
+This app was made during the <a href = "https://stemaway.com/"> Stem-Away </a> 
+Summer 2021 Virtual Internship. The main contributors of the team were: 
+Caleb Kim, Sihong Yuan, Xinyue Ma, Lael Davis and Nilsu Duran. The project 
+mentor was Sara El-Ateif. <br> <br>
+</div>
+
+<div class = "about-title">
+How the App Works:
+</div>
+
+<div class = "about-body">
+We scraped data from about 13,000 posts from the 
+<a href = "https://community.drownedinsound.com/"> Drowned in Sound Community Forum</a>.
+After many experiments, we 
+settled on a model to create an embedding for each post. When the user 
+inputs the post information (category, title, and body) and asks 
+for recommendations, the app uses the aforementioned model to create 
+an embedding for the inputted post, and then uses cosine similarity 
+between the embedding for the inputted post and the 13,000 previously 
+generated post embeddings to determine which 5 posts to display on the 
+recommendations page.  
+</div>
+
+
+
+</body>
+</html>
